@@ -6,8 +6,10 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class ClassifierTest {
+    @Test
     public void test() {
         int number1 = new Random().nextInt();
         double number2 = new Random().nextDouble();
