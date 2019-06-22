@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
+import org.junit.jupiter.api.Assertions;
 
 public class ClassifierTest {
     public void test() {
@@ -19,8 +20,8 @@ public class ClassifierTest {
 
         Classifier.classify(list, numbers, strings, others);
 
-        AssertEquals(Arrays.asList(number1, number2), numbers);
-        AssertEquals(Arrays.asList(s), strings);
-        AssertEquals(3, others.size());
+        Assertions.assertEquals(Arrays.asList(number1, number2), numbers);
+        Assertions.assertEquals(Arrays.asList(s), strings);
+        Assertions.assertEquals(3, others.size());
     }
 }
