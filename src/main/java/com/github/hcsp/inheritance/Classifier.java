@@ -27,15 +27,9 @@ public class Classifier {
      * @param stringList 用于接收所有String对象的列表
      * @param otherList 用于接收其余所有类型对象的列表
      */
-    public static void classify(List<Object> list, List<Number> numberList, List<String> stringList, List<Object> otherList) {
-        for (int i = 0; i<list.size(); i++) {
-            if(list.get(i) instanceof Number) {
-                numberList.add((Number) list.get(i));
-            }else if(list.get(i) instanceof String) {
-                stringList.add((String) list.get(i));
-            } else {
-                otherList.add(list.get(i));
-            }
-        }
-    }
+    public static void classify(
+            List<Object> list,
+            List<Number> numberList,
+            List<String> stringList,
+            List<Object> otherList) {}
 }
