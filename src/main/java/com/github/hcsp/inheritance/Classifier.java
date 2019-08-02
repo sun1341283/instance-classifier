@@ -2,7 +2,9 @@ package com.github.hcsp.inheritance;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Handler;
 
 public class Classifier {
     public static void main(String[] args) {
@@ -31,5 +33,17 @@ public class Classifier {
             List<Object> list,
             List<Number> numberList,
             List<String> stringList,
-            List<Object> otherList) {}
+            List<Object> otherList) {
+        for (int i = 0; i < list.size(); i++) {
+
+            if (list.get(i) instanceof Number){
+                numberList.add((Number)list.get(i));
+            }else if(list.get(i) instanceof String){
+                stringList.add((String)list.get(i));
+            }else {
+                otherList.add(list.get(i));
+            }
+        }
+
+    }
 }
