@@ -1,6 +1,5 @@
 package com.github.hcsp.inheritance;
 
-import com.sun.org.apache.xpath.internal.operations.Number;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,7 +38,7 @@ public class Classifier {
                 numberList.add((Number) o);
             } else if (o instanceof String) {
                 stringList.add((String) o);
-            }else {
+            } else {
                 otherList.add(o);
             }
 
