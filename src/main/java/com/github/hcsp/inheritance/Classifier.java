@@ -13,6 +13,7 @@ public class Classifier {
 
         classify(list, numbers, strings, others);
 
+
         System.out.println("numbers = " + numbers);
         System.out.println("strings = " + strings);
         System.out.println("others = " + others);
@@ -31,5 +32,16 @@ public class Classifier {
             List<Object> list,
             List<Number> numberList,
             List<String> stringList,
-            List<Object> otherList) {}
+            List<Object> otherList) {
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            if (list.get(i) instanceof Number) {
+                numberList.add((Number) list.get(i));
+            } else if (list.get(i) instanceof String) {
+                stringList.add((String) list.get(i));
+            } else {
+                otherList.add(list.get(i));
+            }
+        }
+    }
 }
