@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Classifier {
+
     public static void main(String[] args) {
         List<Object> list = Arrays.asList("0", 1, 2L, "3", new Object());
         List<Number> numbers = new ArrayList<>();
@@ -31,5 +32,15 @@ public class Classifier {
             List<Object> list,
             List<Number> numberList,
             List<String> stringList,
-            List<Object> otherList) {}
+            List<Object> otherList) {
+        for (Object e : list) {
+            if (e instanceof Number) {
+                numberList.add((Number)e);
+            } else if (e instanceof String){
+                stringList.add((String) e);
+            } else {
+                otherList.add(e);
+            }
+        }
+    }
 }
