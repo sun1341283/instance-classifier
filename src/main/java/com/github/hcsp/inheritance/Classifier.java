@@ -1,8 +1,11 @@
 package com.github.hcsp.inheritance;
 
+import com.sun.corba.se.spi.ior.ObjectKey;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ListIterator;
 
 public class Classifier {
     public static void main(String[] args) {
@@ -31,5 +34,21 @@ public class Classifier {
             List<Object> list,
             List<Number> numberList,
             List<String> stringList,
-            List<Object> otherList) {}
+            List<Object> otherList) {
+        ListIterator<Object>
+                iterator = list.listIterator();
+        while (iterator.hasNext()) {
+           Object instance1 = iterator.next();
+           if(instance1 instanceof Number){
+               numberList.add((Number) instance1);
+           } else if(instance1 instanceof String){
+               stringList.add(String.valueOf(instance1));
+           } else {
+               otherList.add(instance1);
+           }
+
+        }
+
+
+    }
 }
