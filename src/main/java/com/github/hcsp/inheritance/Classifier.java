@@ -35,20 +35,19 @@ public class Classifier {
             List<Number> numberList,
             List<String> stringList,
             List<Object> otherList) {
-        ListIterator<Object>
-                iterator = list.listIterator();
-        while (iterator.hasNext()) {
-           Object instance1 = iterator.next();
-           if(instance1 instanceof Number){
-               numberList.add((Number) instance1);
-           } else if(instance1 instanceof String){
-               stringList.add(String.valueOf(instance1));
-           } else {
-               otherList.add(instance1);
+
+           for (Object instance:list){
+               if (instance instanceof Number){
+                   numberList.add((Number) instance);
+               } else if(instance instanceof String){
+                   stringList.add(String.valueOf(instance));
+               } else {
+                   otherList.add(instance);
+               }
            }
 
         }
 
 
     }
-}
+
