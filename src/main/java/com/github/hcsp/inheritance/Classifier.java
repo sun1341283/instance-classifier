@@ -19,7 +19,9 @@ public class Classifier {
     }
 
     /**
-     * 给定一个包含任意对象的列表，将其按照以下方式分类： 如果对象是Number类型，将其放入numberList； 如果对象是String类型，将其放入stringList；
+     * 给定一个包含任意对象的列表，将其按照以下方式分类：
+     * 如果对象是Number类型，将其放入numberList；
+     * 如果对象是String类型，将其放入stringList；
      * 否则，将其放入otherList。
      *
      * @param list 给定的包含任意对象的列表
@@ -31,5 +33,17 @@ public class Classifier {
             List<Object> list,
             List<Number> numberList,
             List<String> stringList,
-            List<Object> otherList) {}
+            List<Object> otherList) {
+        for(Object obj:list){
+            if(obj instanceof Number){
+                numberList.add((Number) obj);
+            }else if(obj instanceof String){
+                stringList.add((String) obj);
+            }else {
+                otherList.add(obj);
+            }
+
+        }
+
+    }
 }
