@@ -33,14 +33,12 @@ public class Classifier {
             List<Number> numberList,
             List<String> stringList,
             List<Object> otherList) {
-        Iterator<Object> iterator = list.iterator();
-        while (iterator.hasNext()){
-            Object o = iterator.next();
-            if (o.getClass().getSuperclass() == Number.class){
+        for (Object o : list) {
+            if (o instanceof Number) {
                 numberList.add((Number) o);
-            }else if(o.getClass() == String.class){
+            } else if (o instanceof String) {
                 stringList.add((String) o);
-            }else {
+            } else {
                 otherList.add(o);
             }
         }
