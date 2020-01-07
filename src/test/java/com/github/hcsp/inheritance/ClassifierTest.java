@@ -26,13 +26,4 @@ public class ClassifierTest {
         Assertions.assertEquals(Arrays.asList(s), strings);
         Assertions.assertEquals(3, others.size());
     }
-
-    @Test
-    public void mytest(){
-        Number num = 1;
-        String str = "1";
-        Class numclass = num.getClass();
-        System.out.println(numclass.getSuperclass() == Number.class);
-        System.out.println(str.getClass() == String.class);
-    }
 }
