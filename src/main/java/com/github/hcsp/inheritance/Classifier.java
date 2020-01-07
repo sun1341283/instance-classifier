@@ -2,6 +2,7 @@ package com.github.hcsp.inheritance;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Classifier {
@@ -31,5 +32,19 @@ public class Classifier {
             List<Object> list,
             List<Number> numberList,
             List<String> stringList,
-            List<Object> otherList) {}
+            List<Object> otherList) {
+        Iterator<Object> iterator = list.iterator();
+        while (iterator.hasNext()){
+            Object o = iterator.next();
+            if (o.getClass().getSuperclass() == Number.class){
+                numberList.add((Number) o);
+            }else if(o.getClass() == String.class){
+                stringList.add((String) o);
+            }else {
+                otherList.add(o);
+            }
+        }
+
+
+    }
 }
