@@ -2,6 +2,7 @@ package com.github.hcsp.inheritance;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Classifier {
@@ -22,14 +23,24 @@ public class Classifier {
      * 给定一个包含任意对象的列表，将其按照以下方式分类： 如果对象是Number类型，将其放入numberList； 如果对象是String类型，将其放入stringList；
      * 否则，将其放入otherList。
      *
-     * @param list 给定的包含任意对象的列表
+     * @param list       给定的包含任意对象的列表
      * @param numberList 用于接收所有Number对象的列表
      * @param stringList 用于接收所有String对象的列表
-     * @param otherList 用于接收其余所有类型对象的列表
+     * @param otherList  用于接收其余所有类型对象的列表
      */
     public static void classify(
             List<Object> list,
             List<Number> numberList,
             List<String> stringList,
-            List<Object> otherList) {}
+            List<Object> otherList) {
+        for (Object object : list) {
+            if (object instanceof Number) {
+                numberList.add((Number) object);
+            } else if (object instanceof String) {
+                stringList.add((String) object);
+            } else {
+                otherList.add(object);
+            }
+        }
+    }
 }
